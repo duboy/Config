@@ -1,0 +1,23 @@
+LIB:
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.10150.0\ucrt\x86;C:\Program Files (x86)\Windows Kits\8.1\Lib\winv6.3\um\x86
+
+Path:
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin;C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE
+
+INCLUDE:
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt
+
+clean:
+cmd /c del -q -y *.exe
+cmd /c del *.obj
+
+compile:
+NPP_SAVE
+cl /EHsc  $(FILE_NAME) 
+
+run:
+$(NAME_PART).exe
+
+g++:
+NPP_SAVE
+g++ -o $(NAME_PART).exe   $(FILE_NAME) 
